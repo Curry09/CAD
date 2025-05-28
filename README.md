@@ -1,6 +1,6 @@
-# CAD模型验证系统
+# 文本 to CAD self-refine system
 
-这个项目实现了对CADPrompt数据集中CAD模型的自动验证功能，可以比较生成的3D模型与Ground Truth的几何属性。
+这个项目实现了对CADPrompt数据集中CAD模型的自动验证功能，可以比较生成的3D模型与Ground Truth的几何属性。通过迭代式自我纠正，提高cad模型产生的正确率和效果。
 
 ## 功能特性
 
