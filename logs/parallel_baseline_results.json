@@ -1,0 +1,2948 @@
+{
+  "total_samples": 10,
+  "successful_generations": 10,
+  "success_rate": 1.0,
+  "average_score": 0.6221120880920965,
+  "detailed_results": {
+    "00000633": {
+      "sample_id": "00000633",
+      "prompt": "Write Python code using CADQuery to create a rectangular block with dimensions 0.75 units in length, 0.1875 units in width, and 0.00391 units in height. Additionally, include a circular hole in the center of the rectangle with a diameter of 0.12512 units.",
+      "generated_code": "import cadquery as cq\n\n# Define dimensions\nlength = 0.75\nwidth = 0.1875\nheight = 0.00391\nhole_diameter = 0.12512\n\n# Create the rectangular block\nblock = cq.Workplane().rect(length, width).extrude(height)\n\n# Create the circular hole in the center of the block\nblock = block.faces(\">Z\").workplane().circle(hole_diameter / 2).cutThruAll()\n\n# Export the final shape\ncq.exporters.export(block, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00000633",
+        "generated_result": {
+          "success": true,
+          "file_size": 8884,
+          "stl_info": {
+            "Number_of_Faces": 176,
+            "Number_of_Unique_Edges": 262,
+            "Number_of_Vertices": 88,
+            "Width_mm": 0.75,
+            "Height_mm": 0.1875,
+            "Depth_mm": 0.003909999970346689,
+            "Bounding_Box_Center": "Vector (0.0, 0.0, 0.0019549999851733446)",
+            "Aspect_Ratio_XY": 4.0,
+            "Aspect_Ratio_XZ": 191.81585823221874,
+            "Aspect_Ratio_YZ": 47.953964558054686,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.0017273850725218313,
+            "Surface_Area_square_mm": 0.8927856542089124,
+            "bounding_box": {
+              "min": [
+                -0.375,
+                -0.09375,
+                0.0
+              ],
+              "max": [
+                0.375,
+                0.09375,
+                0.003909999970346689
+              ],
+              "size": [
+                0.75,
+                0.1875,
+                0.003909999970346689
+              ],
+              "center": [
+                0.0,
+                0.0,
+                0.0019549999851733446
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 176
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": true,
+            "Number_of_Unique_Edges": true,
+            "Number_of_Vertices": true,
+            "Width_mm": true,
+            "Height_mm": true,
+            "Depth_mm": true,
+            "Aspect_Ratio_XY": true,
+            "Aspect_Ratio_XZ": true,
+            "Aspect_Ratio_YZ": true,
+            "Volume_cubic_mm": false,
+            "Surface_Area_square_mm": false,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 176,
+              "ground_truth": 160,
+              "absolute_diff": 16,
+              "relative_error": 0.1
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 262,
+              "ground_truth": 240,
+              "absolute_diff": 22,
+              "relative_error": 0.09166666666666666
+            },
+            "Number_of_Vertices": {
+              "generated": 88,
+              "ground_truth": 80,
+              "absolute_diff": 8,
+              "relative_error": 0.1
+            },
+            "Width_mm": {
+              "generated": 0.75,
+              "ground_truth": 0.75,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Height_mm": {
+              "generated": 0.1875,
+              "ground_truth": 0.1875,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Depth_mm": {
+              "generated": 0.003909999970346689,
+              "ground_truth": 0.00391,
+              "absolute_diff": 2.965331105664326e-11,
+              "relative_error": 7.5839670221594e-09
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 4.0,
+              "ground_truth": 4.0,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 191.81585823221874,
+              "ground_truth": 192.0,
+              "absolute_diff": 0.1841417677812558,
+              "relative_error": 0.0009590717071940406
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 47.953964558054686,
+              "ground_truth": 48.0,
+              "absolute_diff": 0.04603544194531395,
+              "relative_error": 0.0009590717071940406
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.0017273850725218313,
+              "ground_truth": 0.0005,
+              "absolute_diff": 0.0012273850725218313,
+              "relative_error": 2.4547701450436628
+            },
+            "Surface_Area_square_mm": {
+              "generated": 0.8927856542089124,
+              "ground_truth": 0.26569,
+              "absolute_diff": 0.6270956542089124,
+              "relative_error": 2.3602531303734144
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 0.1,
+            "Number_of_Unique_Edges": 0.09166666666666666,
+            "Number_of_Vertices": 0.1,
+            "Width_mm": 0.0,
+            "Height_mm": 0.0,
+            "Depth_mm": 7.5839670221594e-09,
+            "Aspect_Ratio_XY": 0.0,
+            "Aspect_Ratio_XZ": 0.0009590717071940406,
+            "Aspect_Ratio_YZ": 0.0009590717071940406,
+            "Volume_cubic_mm": 2.4547701450436628,
+            "Surface_Area_square_mm": 2.3602531303734144,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.7466483036616658,
+          "metric_scores": {
+            "Number_of_Faces": 0.9,
+            "Number_of_Unique_Edges": 0.9083333333333333,
+            "Number_of_Vertices": 0.9,
+            "Width_mm": 1.0,
+            "Height_mm": 1.0,
+            "Depth_mm": 0.999999992416033,
+            "Aspect_Ratio_XY": 1.0,
+            "Aspect_Ratio_XZ": 0.999040928292806,
+            "Aspect_Ratio_YZ": 0.999040928292806,
+            "Volume_cubic_mm": 0.0,
+            "Surface_Area_square_mm": 0.0,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 160,
+              "generated": 176,
+              "relative_error": 0.1,
+              "score": 0.9,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 240,
+              "generated": 262,
+              "relative_error": 0.09166666666666666,
+              "score": 0.9083333333333333,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 80,
+              "generated": 88,
+              "relative_error": 0.1,
+              "score": 0.9,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 0.75,
+              "generated": 0.75,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 0.1875,
+              "generated": 0.1875,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 0.00391,
+              "generated": 0.003909999970346689,
+              "relative_error": 7.5839670221594e-09,
+              "score": 0.999999992416033,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 4.0,
+              "generated": 4.0,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 192.0,
+              "generated": 191.81585823221874,
+              "relative_error": 0.0009590717071940406,
+              "score": 0.999040928292806,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 48.0,
+              "generated": 47.953964558054686,
+              "relative_error": 0.0009590717071940406,
+              "score": 0.999040928292806,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.0005,
+              "generated": 0.0017273850725218313,
+              "relative_error": 2.4547701450436628,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 0.26569,
+              "generated": 0.8927856542089124,
+              "relative_error": 2.3602531303734144,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.375, 0.09375, 0.001953125)",
+              "generated": "Vector (0.0, 0.0, 0.0019549999851733446)",
+              "relative_error": 0.9999872347333213,
+              "score": 1.2765266678704812e-05,
+              "match": false
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": true,
+        "timestamp": "2025-05-27T13:52:37"
+      },
+      "success": true,
+      "score": 0.7466483036616658
+    },
+    "00000960": {
+      "sample_id": "00000960",
+      "prompt": "Write Python code using CADQuery to create a rectangle with dimensions 0.75 units in length, 0.75 units in width, and 0.00195 units in height. Then, create a second smaller rectangle with dimensions 0.281257 units in length and 0.0625 units in width. This second rectangle should be positioned such that it connects to the right edge of the first rectangle, starting halfway up its height.",
+      "generated_code": "import cadquery as cq\n\n# Dimensions for the larger rectangle\nlength_large = 0.75\nwidth_large = 0.75\nheight_large = 0.00195\n\n# Dimensions for the smaller rectangle\nlength_small = 0.281257\nwidth_small = 0.0625\n\n# Create the larger rectangle\nlarger_rectangle = (\n    cq.Workplane()\n    .rect(length_large, width_large)\n    .extrude(height_large)\n)\n\n# Create the smaller rectangle\nsmaller_rectangle = (\n    cq.Workplane()\n    .rect(length_small, width_small)\n    .extrude(height_large)\n)\n\n# Position the smaller rectangle to the right of the larger rectangle, starting halfway up its height\nfinal_part = (\n    larger_rectangle\n    .union(\n        smaller_rectangle.translate((length_large / 2 + length_small / 2, 0, height_large / 2))\n    )\n)\n\n# Export the final part\ncq.exporters.export(final_part, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00000960",
+        "generated_result": {
+          "success": true,
+          "file_size": 1684,
+          "stl_info": {
+            "Number_of_Faces": 32,
+            "Number_of_Unique_Edges": 48,
+            "Number_of_Vertices": 18,
+            "Width_mm": 1.0312569737434387,
+            "Height_mm": 0.75,
+            "Depth_mm": 0.0029249999206513166,
+            "Bounding_Box_Center": "Vector (0.14062848687171936, 0.0, 0.0014624999603256583)",
+            "Aspect_Ratio_XY": 1.375009298324585,
+            "Aspect_Ratio_XZ": 352.56649631423113,
+            "Aspect_Ratio_YZ": 256.4102633660912,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.0024431466531317724,
+            "Surface_Area_square_mm": 1.6800040549316753,
+            "bounding_box": {
+              "min": [
+                -0.375,
+                -0.375,
+                0.0
+              ],
+              "max": [
+                0.6562569737434387,
+                0.375,
+                0.0029249999206513166
+              ],
+              "size": [
+                1.0312569737434387,
+                0.75,
+                0.0029249999206513166
+              ],
+              "center": [
+                0.14062848687171936,
+                0.0,
+                0.0014624999603256583
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 32
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": true,
+            "Number_of_Unique_Edges": true,
+            "Number_of_Vertices": true,
+            "Width_mm": false,
+            "Height_mm": true,
+            "Depth_mm": false,
+            "Aspect_Ratio_XY": false,
+            "Aspect_Ratio_XZ": true,
+            "Aspect_Ratio_YZ": false,
+            "Volume_cubic_mm": false,
+            "Surface_Area_square_mm": false,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 32,
+              "ground_truth": 28,
+              "absolute_diff": 4,
+              "relative_error": 0.14285714285714285
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 48,
+              "ground_truth": 42,
+              "absolute_diff": 6,
+              "relative_error": 0.14285714285714285
+            },
+            "Number_of_Vertices": {
+              "generated": 18,
+              "ground_truth": 16,
+              "absolute_diff": 2,
+              "relative_error": 0.125
+            },
+            "Width_mm": {
+              "generated": 1.0312569737434387,
+              "ground_truth": 0.75,
+              "absolute_diff": 0.2812569737434387,
+              "relative_error": 0.37500929832458496
+            },
+            "Height_mm": {
+              "generated": 0.75,
+              "ground_truth": 0.75,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Depth_mm": {
+              "generated": 0.0029249999206513166,
+              "ground_truth": 0.00195,
+              "absolute_diff": 0.0009749999206513167,
+              "relative_error": 0.4999999593083676
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 1.375009298324585,
+              "ground_truth": 1.0,
+              "absolute_diff": 0.37500929832458496,
+              "relative_error": 0.37500929832458496
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 352.56649631423113,
+              "ground_truth": 384.0,
+              "absolute_diff": 31.43350368576887,
+              "relative_error": 0.08185808251502309
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 256.4102633660912,
+              "ground_truth": 384.0,
+              "absolute_diff": 127.58973663390879,
+              "relative_error": 0.33226493915080413
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.0024431466531317724,
+              "ground_truth": 0.0009,
+              "absolute_diff": 0.0015431466531317724,
+              "relative_error": 1.714607392368636
+            },
+            "Surface_Area_square_mm": {
+              "generated": 1.6800040549316753,
+              "ground_truth": 0.92904,
+              "absolute_diff": 0.7509640549316753,
+              "relative_error": 0.808322628661495
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 0.14285714285714285,
+            "Number_of_Unique_Edges": 0.14285714285714285,
+            "Number_of_Vertices": 0.125,
+            "Width_mm": 0.37500929832458496,
+            "Height_mm": 0.0,
+            "Depth_mm": 0.4999999593083676,
+            "Aspect_Ratio_XY": 0.37500929832458496,
+            "Aspect_Ratio_XZ": 0.08185808251502309,
+            "Aspect_Ratio_YZ": 0.33226493915080413,
+            "Volume_cubic_mm": 1.714607392368636,
+            "Surface_Area_square_mm": 0.808322628661495,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.637151684534708,
+          "metric_scores": {
+            "Number_of_Faces": 0.8571428571428572,
+            "Number_of_Unique_Edges": 0.8571428571428572,
+            "Number_of_Vertices": 0.875,
+            "Width_mm": 0.624990701675415,
+            "Height_mm": 1.0,
+            "Depth_mm": 0.5000000406916324,
+            "Aspect_Ratio_XY": 0.624990701675415,
+            "Aspect_Ratio_XZ": 0.9181419174849769,
+            "Aspect_Ratio_YZ": 0.6677350608491959,
+            "Volume_cubic_mm": 0.0,
+            "Surface_Area_square_mm": 0.19167737133850504,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 28,
+              "generated": 32,
+              "relative_error": 0.14285714285714285,
+              "score": 0.8571428571428572,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 42,
+              "generated": 48,
+              "relative_error": 0.14285714285714285,
+              "score": 0.8571428571428572,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 16,
+              "generated": 18,
+              "relative_error": 0.125,
+              "score": 0.875,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 0.75,
+              "generated": 1.0312569737434387,
+              "relative_error": 0.37500929832458496,
+              "score": 0.624990701675415,
+              "match": false,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 0.75,
+              "generated": 0.75,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 0.00195,
+              "generated": 0.0029249999206513166,
+              "relative_error": 0.4999999593083676,
+              "score": 0.5000000406916324,
+              "match": false,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 1.0,
+              "generated": 1.375009298324585,
+              "relative_error": 0.37500929832458496,
+              "score": 0.624990701675415,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 384.0,
+              "generated": 352.56649631423113,
+              "relative_error": 0.08185808251502309,
+              "score": 0.9181419174849769,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 384.0,
+              "generated": 256.4102633660912,
+              "relative_error": 0.33226493915080413,
+              "score": 0.6677350608491959,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.0009,
+              "generated": 0.0024431466531317724,
+              "relative_error": 1.714607392368636,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 0.92904,
+              "generated": 1.6800040549316753,
+              "relative_error": 0.808322628661495,
+              "score": 0.19167737133850504,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.37500000000000006, 0.375, 0.0009765625)",
+              "generated": "Vector (0.14062848687171936, 0.0, 0.0014624999603256583)",
+              "relative_error": 0.833849609049651,
+              "score": 0.166150390950349,
+              "match": false
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": true,
+        "timestamp": "2025-05-27T13:52:38"
+      },
+      "success": true,
+      "score": 0.637151684534708
+    },
+    "00001411": {
+      "sample_id": "00001411",
+      "prompt": "Write Python code using CADQuery to create a cylinder with a height of 1.5 units and a radius of 0.014425 units.",
+      "generated_code": "import cadquery as cq\n\n# Define the dimensions for the cylinder\nradius: float = 0.014425\nheight: float = 1.5\n\n# Create the cylinder\npart: cq.Workplane = cq.Workplane(\"XY\").cylinder(height, radius)\n\n# Export the part to STL file\ncq.exporters.export(part, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00001411",
+        "generated_result": {
+          "success": true,
+          "file_size": 1884,
+          "stl_info": {
+            "Number_of_Faces": 36,
+            "Number_of_Unique_Edges": 54,
+            "Number_of_Vertices": 20,
+            "Width_mm": 0.028850000351667404,
+            "Height_mm": 0.027437981218099594,
+            "Depth_mm": 1.5,
+            "Bounding_Box_Center": "Vector (0.0, 0.0, 0.0)",
+            "Aspect_Ratio_XY": 1.051462209349293,
+            "Aspect_Ratio_XZ": 0.01923333356777827,
+            "Aspect_Ratio_YZ": 0.018291987478733063,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.0009805568681865767,
+            "Surface_Area_square_mm": 0.137259832898874,
+            "bounding_box": {
+              "min": [
+                -0.014425000175833702,
+                -0.013718990609049797,
+                -0.75
+              ],
+              "max": [
+                0.014425000175833702,
+                0.013718990609049797,
+                0.75
+              ],
+              "size": [
+                0.028850000351667404,
+                0.027437981218099594,
+                1.5
+              ],
+              "center": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 36
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": false,
+            "Number_of_Unique_Edges": false,
+            "Number_of_Vertices": false,
+            "Width_mm": true,
+            "Height_mm": false,
+            "Depth_mm": false,
+            "Aspect_Ratio_XY": false,
+            "Aspect_Ratio_XZ": false,
+            "Aspect_Ratio_YZ": false,
+            "Volume_cubic_mm": true,
+            "Surface_Area_square_mm": true,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 36,
+              "ground_truth": 212,
+              "absolute_diff": 176,
+              "relative_error": 0.8301886792452831
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 54,
+              "ground_truth": 318,
+              "absolute_diff": 264,
+              "relative_error": 0.8301886792452831
+            },
+            "Number_of_Vertices": {
+              "generated": 20,
+              "ground_truth": 108,
+              "absolute_diff": 88,
+              "relative_error": 0.8148148148148148
+            },
+            "Width_mm": {
+              "generated": 0.028850000351667404,
+              "ground_truth": 0.02885,
+              "absolute_diff": 3.5166740353087533e-10,
+              "relative_error": 1.2189511387552004e-08
+            },
+            "Height_mm": {
+              "generated": 0.027437981218099594,
+              "ground_truth": 1.5,
+              "absolute_diff": 1.4725620187819004,
+              "relative_error": 0.9817080125212669
+            },
+            "Depth_mm": {
+              "generated": 1.5,
+              "ground_truth": 0.02885,
+              "absolute_diff": 1.47115,
+              "relative_error": 50.99306759098786
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 1.051462209349293,
+              "ground_truth": 0.01923,
+              "absolute_diff": 1.0322322093492928,
+              "relative_error": 53.67822201504383
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 0.01923333356777827,
+              "ground_truth": 1.0,
+              "absolute_diff": 0.9807666664322218,
+              "relative_error": 0.9807666664322218
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 0.018291987478733063,
+              "ground_truth": 51.99999,
+              "absolute_diff": 51.981698012521264,
+              "relative_error": 0.9996482309423764
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.0009805568681865767,
+              "ground_truth": 0.00098,
+              "absolute_diff": 5.568681865767474e-07,
+              "relative_error": 0.0005682328434456606
+            },
+            "Surface_Area_square_mm": {
+              "generated": 0.137259832898874,
+              "ground_truth": 0.13706,
+              "absolute_diff": 0.0001998328988740139,
+              "relative_error": 0.0014579957600613885
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 0.8301886792452831,
+            "Number_of_Unique_Edges": 0.8301886792452831,
+            "Number_of_Vertices": 0.8148148148148148,
+            "Width_mm": 1.2189511387552004e-08,
+            "Height_mm": 0.9817080125212669,
+            "Depth_mm": 50.99306759098786,
+            "Aspect_Ratio_XY": 53.67822201504383,
+            "Aspect_Ratio_XZ": 0.9807666664322218,
+            "Aspect_Ratio_YZ": 0.9996482309423764,
+            "Volume_cubic_mm": 0.0005682328434456606,
+            "Surface_Area_square_mm": 0.0014579957600613885,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.42774297507736425,
+          "metric_scores": {
+            "Number_of_Faces": 0.16981132075471694,
+            "Number_of_Unique_Edges": 0.16981132075471694,
+            "Number_of_Vertices": 0.18518518518518523,
+            "Width_mm": 0.9999999878104886,
+            "Height_mm": 0.018291987478733063,
+            "Depth_mm": 0.0,
+            "Aspect_Ratio_XY": 0.0,
+            "Aspect_Ratio_XZ": 0.019233333567778232,
+            "Aspect_Ratio_YZ": 0.00035176905762357435,
+            "Volume_cubic_mm": 0.9994317671565544,
+            "Surface_Area_square_mm": 0.9985420042399387,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 212,
+              "generated": 36,
+              "relative_error": 0.8301886792452831,
+              "score": 0.16981132075471694,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 318,
+              "generated": 54,
+              "relative_error": 0.8301886792452831,
+              "score": 0.16981132075471694,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 108,
+              "generated": 20,
+              "relative_error": 0.8148148148148148,
+              "score": 0.18518518518518523,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 0.02885,
+              "generated": 0.028850000351667404,
+              "relative_error": 1.2189511387552004e-08,
+              "score": 0.9999999878104886,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 1.5,
+              "generated": 0.027437981218099594,
+              "relative_error": 0.9817080125212669,
+              "score": 0.018291987478733063,
+              "match": false,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 0.02885,
+              "generated": 1.5,
+              "relative_error": 50.99306759098786,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 0.01923,
+              "generated": 1.051462209349293,
+              "relative_error": 53.67822201504383,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 1.0,
+              "generated": 0.01923333356777827,
+              "relative_error": 0.9807666664322218,
+              "score": 0.019233333567778232,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 51.99999,
+              "generated": 0.018291987478733063,
+              "relative_error": 0.9996482309423764,
+              "score": 0.00035176905762357435,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.00098,
+              "generated": 0.0009805568681865767,
+              "relative_error": 0.0005682328434456606,
+              "score": 0.9994317671565544,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 0.13706,
+              "generated": 0.137259832898874,
+              "relative_error": 0.0014579957600613885,
+              "score": 0.9985420042399387,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.0, 0.0, 0.0)",
+              "generated": "Vector (0.0, 0.0, 0.0)",
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": false,
+        "timestamp": "2025-05-27T13:52:36"
+      },
+      "success": true,
+      "score": 0.42774297507736425
+    },
+    "00001490": {
+      "sample_id": "00001490",
+      "prompt": "Write Python code using CADQuery to create a cylinder with a height of 0.48649 units and a radius of 0.75 units. Include a central circular cutout with a diameter of 0.243243243243244 units that extends through the entire height of the cylinder.",
+      "generated_code": "import cadquery as cq\n\n# Define dimensions\ncylinder_radius = 0.75\ncylinder_height = 0.48649\ncutout_diameter = 0.243243243243244\n\n# Create the base of the cylinder\nbase = cq.Workplane(\"XY\").circle(cylinder_radius)\n\n# Extrude the base to form the cylinder\ncylinder = base.extrude(cylinder_height)\n\n# Create the cutout on a new workplane at the top of the cylinder\ncutout = cylinder.faces(\">Z\").workplane().circle(cutout_diameter / 2).cutThruAll()\n\n# Export the final shape\ncq.exporters.export(cutout, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00001490",
+        "generated_result": {
+          "success": true,
+          "file_size": 40684,
+          "stl_info": {
+            "Number_of_Faces": 812,
+            "Number_of_Unique_Edges": 1216,
+            "Number_of_Vertices": 406,
+            "Width_mm": 1.5,
+            "Height_mm": 1.499533772468567,
+            "Depth_mm": 0.48649001121520996,
+            "Bounding_Box_Center": "Vector (0.0, 0.0, 0.24324500560760498)",
+            "Aspect_Ratio_XY": 1.000310914992375,
+            "Aspect_Ratio_XZ": 3.083310993895085,
+            "Aspect_Ratio_YZ": 3.082352644246202,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.8596988129691673,
+            "Surface_Area_square_mm": 5.826821903206296,
+            "bounding_box": {
+              "min": [
+                -0.75,
+                -0.7497668862342834,
+                0.0
+              ],
+              "max": [
+                0.75,
+                0.7497668862342834,
+                0.48649001121520996
+              ],
+              "size": [
+                1.5,
+                1.499533772468567,
+                0.48649001121520996
+              ],
+              "center": [
+                0.0,
+                0.0,
+                0.24324500560760498
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 812
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": false,
+            "Number_of_Unique_Edges": false,
+            "Number_of_Vertices": false,
+            "Width_mm": true,
+            "Height_mm": true,
+            "Depth_mm": true,
+            "Aspect_Ratio_XY": true,
+            "Aspect_Ratio_XZ": true,
+            "Aspect_Ratio_YZ": true,
+            "Volume_cubic_mm": true,
+            "Surface_Area_square_mm": true,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 812,
+              "ground_truth": 288,
+              "absolute_diff": 524,
+              "relative_error": 1.8194444444444444
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 1216,
+              "ground_truth": 432,
+              "absolute_diff": 784,
+              "relative_error": 1.8148148148148149
+            },
+            "Number_of_Vertices": {
+              "generated": 406,
+              "ground_truth": 144,
+              "absolute_diff": 262,
+              "relative_error": 1.8194444444444444
+            },
+            "Width_mm": {
+              "generated": 1.5,
+              "ground_truth": 1.5,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Height_mm": {
+              "generated": 1.499533772468567,
+              "ground_truth": 1.5,
+              "absolute_diff": 0.00046622753143310547,
+              "relative_error": 0.000310818354288737
+            },
+            "Depth_mm": {
+              "generated": 0.48649001121520996,
+              "ground_truth": 0.48649,
+              "absolute_diff": 1.1215209982928798e-08,
+              "relative_error": 2.3053320690926427e-08
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 1.000310914992375,
+              "ground_truth": 1.0,
+              "absolute_diff": 0.00031091499237501097,
+              "relative_error": 0.00031091499237501097
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 3.083310993895085,
+              "ground_truth": 3.08333,
+              "absolute_diff": 1.9006104915231248e-05,
+              "relative_error": 6.1641487986142405e-06
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 3.082352644246202,
+              "ground_truth": 3.08333,
+              "absolute_diff": 0.0009773557537982036,
+              "relative_error": 0.00031698058715680887
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.8596988129691673,
+              "ground_truth": 0.83284,
+              "absolute_diff": 0.026858812969167256,
+              "relative_error": 0.032249667366081425
+            },
+            "Surface_Area_square_mm": {
+              "generated": 5.826821903206296,
+              "ground_truth": 6.08481,
+              "absolute_diff": 0.2579880967937038,
+              "relative_error": 0.04239871036132662
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 1.8194444444444444,
+            "Number_of_Unique_Edges": 1.8148148148148149,
+            "Number_of_Vertices": 1.8194444444444444,
+            "Width_mm": 0.0,
+            "Height_mm": 0.000310818354288737,
+            "Depth_mm": 2.3053320690926427e-08,
+            "Aspect_Ratio_XY": 0.00031091499237501097,
+            "Aspect_Ratio_XZ": 6.1641487986142405e-06,
+            "Aspect_Ratio_YZ": 0.00031698058715680887,
+            "Volume_cubic_mm": 0.032249667366081425,
+            "Surface_Area_square_mm": 0.04239871036132662,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.7634153455706083,
+          "metric_scores": {
+            "Number_of_Faces": 0.0,
+            "Number_of_Unique_Edges": 0.0,
+            "Number_of_Vertices": 0.0,
+            "Width_mm": 1.0,
+            "Height_mm": 0.9996891816457113,
+            "Depth_mm": 0.9999999769466793,
+            "Aspect_Ratio_XY": 0.999689085007625,
+            "Aspect_Ratio_XZ": 0.9999938358512014,
+            "Aspect_Ratio_YZ": 0.9996830194128432,
+            "Volume_cubic_mm": 0.9677503326339185,
+            "Surface_Area_square_mm": 0.9576012896386734,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 288,
+              "generated": 812,
+              "relative_error": 1.8194444444444444,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 432,
+              "generated": 1216,
+              "relative_error": 1.8148148148148149,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 144,
+              "generated": 406,
+              "relative_error": 1.8194444444444444,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 1.5,
+              "generated": 1.5,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 1.5,
+              "generated": 1.499533772468567,
+              "relative_error": 0.000310818354288737,
+              "score": 0.9996891816457113,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 0.48649,
+              "generated": 0.48649001121520996,
+              "relative_error": 2.3053320690926427e-08,
+              "score": 0.9999999769466793,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 1.0,
+              "generated": 1.000310914992375,
+              "relative_error": 0.00031091499237501097,
+              "score": 0.999689085007625,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 3.08333,
+              "generated": 3.083310993895085,
+              "relative_error": 6.1641487986142405e-06,
+              "score": 0.9999938358512014,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 3.08333,
+              "generated": 3.082352644246202,
+              "relative_error": 0.00031698058715680887,
+              "score": 0.9996830194128432,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.83284,
+              "generated": 0.8596988129691673,
+              "relative_error": 0.032249667366081425,
+              "score": 0.9677503326339185,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 6.08481,
+              "generated": 5.826821903206296,
+              "relative_error": 0.04239871036132662,
+              "score": 0.9576012896386734,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.0, 0.0, 0.2432432472705841)",
+              "generated": "Vector (0.0, 0.0, 0.24324500560760498)",
+              "relative_error": 7.228718743908426e-06,
+              "score": 0.9999927712812561,
+              "match": true
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": true,
+        "timestamp": "2025-05-27T13:52:44"
+      },
+      "success": true,
+      "score": 0.7634153455706083
+    },
+    "00001615": {
+      "sample_id": "00001615",
+      "prompt": "Write Python code using CADQuery to create a cylinder with a height of 1.5 units and a diameter of 0.6 units. Then, cut a rectangular portion out of the top of the cylinder. The portion to be removed should have a length of approximately 0.235 units (about 1/4th the diameter of the cylinder), a width equal to the diameter of the cylinder (0.6 units), and a height of approximately 0.292 units (about 1/5th the height of the cylinder). Position the cut such that it starts from the top center of the cylinder and extends downwards.",
+      "generated_code": "import cadquery as cq\n\n# Cylinder dimensions\ncylinder_diameter = 0.6\ncylinder_height = 1.5\n\n# Cutting rectangle dimensions\ncut_length = 0.235  # about 1/4th of the diameter\ncut_width = cylinder_diameter  # same as cylinder diameter\ncut_height = 0.292  # about 1/5th of the height\n\n# Create the cylinder\ncylinder = cq.Workplane(\"XY\").circle(cylinder_diameter / 2).extrude(cylinder_height)\n\n# Create the cutting rectangle\ncut_rectangle = (\n    cq.Workplane(\"XY\")\n    .rect(cut_length, cut_width)\n    .extrude(cut_height)\n    .translate((0, 0, cylinder_height - cut_height / 2))  # Position at the top center\n)\n\n# Perform the cut\nresult = cylinder.cut(cut_rectangle)\n\n# Export the final shape\ncq.exporters.export(result, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00001615",
+        "generated_result": {
+          "success": true,
+          "file_size": 25784,
+          "stl_info": {
+            "Number_of_Faces": 514,
+            "Number_of_Unique_Edges": 771,
+            "Number_of_Vertices": 259,
+            "Width_mm": 0.6000000238418579,
+            "Height_mm": 0.5998318791389465,
+            "Depth_mm": 1.5,
+            "Bounding_Box_Center": "Vector (0.0, 0.0, 0.75)",
+            "Aspect_Ratio_XY": 1.000280319717506,
+            "Aspect_Ratio_XZ": 0.40000001589457196,
+            "Aspect_Ratio_YZ": 0.39988791942596436,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.4241150419402553,
+            "Surface_Area_square_mm": 3.3929202231699294,
+            "bounding_box": {
+              "min": [
+                -0.30000001192092896,
+                -0.29991593956947327,
+                0.0
+              ],
+              "max": [
+                0.30000001192092896,
+                0.29991593956947327,
+                1.5
+              ],
+              "size": [
+                0.6000000238418579,
+                0.5998318791389465,
+                1.5
+              ],
+              "center": [
+                0.0,
+                0.0,
+                0.75
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 514
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": false,
+            "Number_of_Unique_Edges": false,
+            "Number_of_Vertices": false,
+            "Width_mm": true,
+            "Height_mm": true,
+            "Depth_mm": true,
+            "Aspect_Ratio_XY": true,
+            "Aspect_Ratio_XZ": true,
+            "Aspect_Ratio_YZ": true,
+            "Volume_cubic_mm": true,
+            "Surface_Area_square_mm": true,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 514,
+              "ground_truth": 222,
+              "absolute_diff": 292,
+              "relative_error": 1.3153153153153154
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 771,
+              "ground_truth": 333,
+              "absolute_diff": 438,
+              "relative_error": 1.3153153153153154
+            },
+            "Number_of_Vertices": {
+              "generated": 259,
+              "ground_truth": 113,
+              "absolute_diff": 146,
+              "relative_error": 1.2920353982300885
+            },
+            "Width_mm": {
+              "generated": 0.6000000238418579,
+              "ground_truth": 0.6,
+              "absolute_diff": 2.384185793236071e-08,
+              "relative_error": 3.973642988726785e-08
+            },
+            "Height_mm": {
+              "generated": 0.5998318791389465,
+              "ground_truth": 0.6,
+              "absolute_diff": 0.0001681208610534446,
+              "relative_error": 0.00028020143508907436
+            },
+            "Depth_mm": {
+              "generated": 1.5,
+              "ground_truth": 1.5,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 1.000280319717506,
+              "ground_truth": 1.0,
+              "absolute_diff": 0.0002803197175060834,
+              "relative_error": 0.0002803197175060834
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 0.40000001589457196,
+              "ground_truth": 0.4,
+              "absolute_diff": 1.5894571936403423e-08,
+              "relative_error": 3.973642984100856e-08
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 0.39988791942596436,
+              "ground_truth": 0.4,
+              "absolute_diff": 0.00011208057403566674,
+              "relative_error": 0.00028020143508916684
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.4241150419402553,
+              "ground_truth": 0.3923,
+              "absolute_diff": 0.031815041940255306,
+              "relative_error": 0.0810987559017469
+            },
+            "Surface_Area_square_mm": {
+              "generated": 3.3929202231699294,
+              "ground_truth": 3.32093,
+              "absolute_diff": 0.0719902231699292,
+              "relative_error": 0.021677729783503175
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 1.3153153153153154,
+            "Number_of_Unique_Edges": 1.3153153153153154,
+            "Number_of_Vertices": 1.2920353982300885,
+            "Width_mm": 3.973642988726785e-08,
+            "Height_mm": 0.00028020143508907436,
+            "Depth_mm": 0.0,
+            "Aspect_Ratio_XY": 0.0002803197175060834,
+            "Aspect_Ratio_XZ": 3.973642984100856e-08,
+            "Aspect_Ratio_YZ": 0.00028020143508916684,
+            "Volume_cubic_mm": 0.0810987559017469,
+            "Surface_Area_square_mm": 0.021677729783503175,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.684337131711862,
+          "metric_scores": {
+            "Number_of_Faces": 0.0,
+            "Number_of_Unique_Edges": 0.0,
+            "Number_of_Vertices": 0.0,
+            "Width_mm": 0.9999999602635701,
+            "Height_mm": 0.9997197985649109,
+            "Depth_mm": 1.0,
+            "Aspect_Ratio_XY": 0.9997196802824939,
+            "Aspect_Ratio_XZ": 0.9999999602635702,
+            "Aspect_Ratio_YZ": 0.9997197985649109,
+            "Volume_cubic_mm": 0.9189012440982531,
+            "Surface_Area_square_mm": 0.9783222702164969,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 222,
+              "generated": 514,
+              "relative_error": 1.3153153153153154,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 333,
+              "generated": 771,
+              "relative_error": 1.3153153153153154,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 113,
+              "generated": 259,
+              "relative_error": 1.2920353982300885,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 0.6,
+              "generated": 0.6000000238418579,
+              "relative_error": 3.973642988726785e-08,
+              "score": 0.9999999602635701,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 0.6,
+              "generated": 0.5998318791389465,
+              "relative_error": 0.00028020143508907436,
+              "score": 0.9997197985649109,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 1.5,
+              "generated": 1.5,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 1.0,
+              "generated": 1.000280319717506,
+              "relative_error": 0.0002803197175060834,
+              "score": 0.9997196802824939,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 0.4,
+              "generated": 0.40000001589457196,
+              "relative_error": 3.973642984100856e-08,
+              "score": 0.9999999602635702,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 0.4,
+              "generated": 0.39988791942596436,
+              "relative_error": 0.00028020143508916684,
+              "score": 0.9997197985649109,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.3923,
+              "generated": 0.4241150419402553,
+              "relative_error": 0.0810987559017469,
+              "score": 0.9189012440982531,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 3.32093,
+              "generated": 3.3929202231699294,
+              "relative_error": 0.021677729783503175,
+              "score": 0.9783222702164969,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.0, 0.0, 0.0)",
+              "generated": "Vector (0.0, 0.0, 0.75)",
+              "relative_error": 1.0,
+              "score": 0.0,
+              "match": false
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": true,
+        "timestamp": "2025-05-27T13:52:38"
+      },
+      "success": true,
+      "score": 0.684337131711862
+    },
+    "00001817": {
+      "sample_id": "00001817",
+      "prompt": "Write Python code using CADQuery to create a table with specific dimensions. First, create a rectangular table top with a length of 1.20302 units, a width of 0.55872 units, and a height of 0.020134 units. Then, create four legs, each being a long extruded square with a length and width of 0.060403 units and a height of 0.75 units. Position these legs at each corner of the table top, ensuring they are linked to the bottom of the table top.",
+      "generated_code": "import cadquery as cq\n\n# Define dimensions\ntable_top_length = 1.20302\ntable_top_width = 0.55872\ntable_top_height = 0.020134\nleg_square_side = 0.060403\nleg_height = 0.75\n\n# Create the table top\ntable_top = (\n    cq.Workplane()\n    .box(table_top_length, table_top_width, table_top_height)\n    .translate((0, 0, -table_top_height / 2))\n)\n\n# Create one leg and then mirror and translate to create the other three legs\none_leg = (\n    cq.Workplane()\n    .rect(leg_square_side, leg_square_side)\n    .extrude(-leg_height)  # Extrude downwards\n    .translate((-table_top_length / 2 + leg_square_side / 2, table_top_width / 2 - leg_square_side / 2, -table_top_height))\n)\n\nall_legs = (\n    one_leg\n    .mirror(\"XZ\", (0, 0, 0))  # Mirror across Y-axis to create opposite side leg\n    .mirror(\"YZ\", (0, 0, 0))  # Mirror across X-axis to create the other two legs\n)\n\n# Combine the table top and legs\npart = table_top.union(all_legs)\n\n# Export the final part as STL\ncq.exporters.export(part, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00001817",
+        "generated_result": {
+          "success": true,
+          "file_size": 1284,
+          "stl_info": {
+            "Number_of_Faces": 24,
+            "Number_of_Unique_Edges": 36,
+            "Number_of_Vertices": 14,
+            "Width_mm": 1.2030199766159058,
+            "Height_mm": 0.5587199926376343,
+            "Depth_mm": 0.7701339721679688,
+            "Bounding_Box_Center": "Vector (0.0, 0.0, -0.3850669860839844)",
+            "Aspect_Ratio_XY": 2.1531715214567977,
+            "Aspect_Ratio_XZ": 1.5620918179071357,
+            "Aspect_Ratio_YZ": 0.7254841531854611,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.87539052345705,
+            "Surface_Area_square_mm": 5.183989429421374,
+            "bounding_box": {
+              "min": [
+                -0.6015099883079529,
+                -0.27935999631881714,
+                -0.7701339721679688
+              ],
+              "max": [
+                0.6015099883079529,
+                0.27935999631881714,
+                0.0
+              ],
+              "size": [
+                1.2030199766159058,
+                0.5587199926376343,
+                0.7701339721679688
+              ],
+              "center": [
+                0.0,
+                0.0,
+                -0.3850669860839844
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 24
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": false,
+            "Number_of_Unique_Edges": false,
+            "Number_of_Vertices": false,
+            "Width_mm": true,
+            "Height_mm": true,
+            "Depth_mm": true,
+            "Aspect_Ratio_XY": true,
+            "Aspect_Ratio_XZ": true,
+            "Aspect_Ratio_YZ": true,
+            "Volume_cubic_mm": false,
+            "Surface_Area_square_mm": false,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 24,
+              "ground_truth": 68,
+              "absolute_diff": 44,
+              "relative_error": 0.6470588235294118
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 36,
+              "ground_truth": 102,
+              "absolute_diff": 66,
+              "relative_error": 0.6470588235294118
+            },
+            "Number_of_Vertices": {
+              "generated": 14,
+              "ground_truth": 36,
+              "absolute_diff": 22,
+              "relative_error": 0.6111111111111112
+            },
+            "Width_mm": {
+              "generated": 1.2030199766159058,
+              "ground_truth": 1.20302,
+              "absolute_diff": 2.3384094216538642e-08,
+              "relative_error": 1.9437826650046253e-08
+            },
+            "Height_mm": {
+              "generated": 0.5587199926376343,
+              "ground_truth": 0.55872,
+              "absolute_diff": 7.3623657170784895e-09,
+              "relative_error": 1.317720095410669e-08
+            },
+            "Depth_mm": {
+              "generated": 0.7701339721679688,
+              "ground_truth": 0.77013,
+              "absolute_diff": 3.972167968768758e-06,
+              "relative_error": 5.157788904170411e-06
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 2.1531715214567977,
+              "ground_truth": 2.15315,
+              "absolute_diff": 2.152145679756856e-05,
+              "relative_error": 9.995335576977247e-06
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 1.5620918179071357,
+              "ground_truth": 1.56209,
+              "absolute_diff": 1.8179071357149468e-06,
+              "relative_error": 1.16376593903997e-06
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 0.7254841531854611,
+              "ground_truth": 0.72549,
+              "absolute_diff": 5.846814538856826e-06,
+              "relative_error": 8.059124920890469e-06
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.87539052345705,
+              "ground_truth": 0.02448,
+              "absolute_diff": 0.8509105234570501,
+              "relative_error": 34.75941680788603
+            },
+            "Surface_Area_square_mm": {
+              "generated": 5.183989429421374,
+              "ground_truth": 2.14009,
+              "absolute_diff": 3.0438994294213746,
+              "relative_error": 1.4223230936182005
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 0.6470588235294118,
+            "Number_of_Unique_Edges": 0.6470588235294118,
+            "Number_of_Vertices": 0.6111111111111112,
+            "Width_mm": 1.9437826650046253e-08,
+            "Height_mm": 1.317720095410669e-08,
+            "Depth_mm": 5.157788904170411e-06,
+            "Aspect_Ratio_XY": 9.995335576977247e-06,
+            "Aspect_Ratio_XZ": 1.16376593903997e-06,
+            "Aspect_Ratio_YZ": 8.059124920890469e-06,
+            "Volume_cubic_mm": 34.75941680788603,
+            "Surface_Area_square_mm": 1.4223230936182005,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.6953519052847222,
+          "metric_scores": {
+            "Number_of_Faces": 0.3529411764705882,
+            "Number_of_Unique_Edges": 0.3529411764705882,
+            "Number_of_Vertices": 0.38888888888888884,
+            "Width_mm": 0.9999999805621733,
+            "Height_mm": 0.999999986822799,
+            "Depth_mm": 0.9999948422110958,
+            "Aspect_Ratio_XY": 0.999990004664423,
+            "Aspect_Ratio_XZ": 0.9999988362340609,
+            "Aspect_Ratio_YZ": 0.9999919408750791,
+            "Volume_cubic_mm": 0.0,
+            "Surface_Area_square_mm": 0.0,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 68,
+              "generated": 24,
+              "relative_error": 0.6470588235294118,
+              "score": 0.3529411764705882,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 102,
+              "generated": 36,
+              "relative_error": 0.6470588235294118,
+              "score": 0.3529411764705882,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 36,
+              "generated": 14,
+              "relative_error": 0.6111111111111112,
+              "score": 0.38888888888888884,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 1.20302,
+              "generated": 1.2030199766159058,
+              "relative_error": 1.9437826650046253e-08,
+              "score": 0.9999999805621733,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 0.55872,
+              "generated": 0.5587199926376343,
+              "relative_error": 1.317720095410669e-08,
+              "score": 0.999999986822799,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 0.77013,
+              "generated": 0.7701339721679688,
+              "relative_error": 5.157788904170411e-06,
+              "score": 0.9999948422110958,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 2.15315,
+              "generated": 2.1531715214567977,
+              "relative_error": 9.995335576977247e-06,
+              "score": 0.999990004664423,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 1.56209,
+              "generated": 1.5620918179071357,
+              "relative_error": 1.16376593903997e-06,
+              "score": 0.9999988362340609,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 0.72549,
+              "generated": 0.7254841531854611,
+              "relative_error": 8.059124920890469e-06,
+              "score": 0.9999919408750791,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.02448,
+              "generated": 0.87539052345705,
+              "relative_error": 34.75941680788603,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 2.14009,
+              "generated": 5.183989429421374,
+              "relative_error": 1.4223230936182005,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.0, 0.0, -0.36493288539350033)",
+              "generated": "Vector (0.0, 0.0, -0.3850669860839844)",
+              "relative_error": 0.05517206449830856,
+              "score": 0.9448279355016914,
+              "match": true
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": true,
+        "timestamp": "2025-05-27T13:52:40"
+      },
+      "success": true,
+      "score": 0.6953519052847222
+    },
+    "00001977": {
+      "sample_id": "00001977",
+      "prompt": "Write Python code using CADQuery to create a right triangle with a base of 0.20312 units and a height of 0.20312 units, then extrude it to a height of 0.75 units. Rotate the resulting 3D object by -90 degrees around the Y-axis.",
+      "generated_code": "import cadquery as cq\n\n# Define the dimensions of the right triangle\nbase = 0.20312\nheight = 0.20312\nextrusion_height = 0.75\n\n# Create a workplane and define the triangle\ntriangle = (\n    cq.Workplane()\n    .rect(base, height, centered=False)  # Create a rectangle\n    .polyline([(0, 0), (base, 0), (0, height)])  # Define the vertices of the triangle\n    .close()  # Close the polyline to form a triangle\n    .extrude(extrusion_height)  # Extrude the triangle to form a 3D object\n)\n\n# Rotate the 3D object around the Y-axis by -90 degrees\nrotated_triangle = triangle.rotate((0, 0, 0), (0, 1, 0), -90)\n\n# Export the final 3D object\ncq.exporters.export(rotated_triangle, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00001977",
+        "generated_result": {
+          "success": true,
+          "file_size": 884,
+          "stl_info": {
+            "Number_of_Faces": 16,
+            "Number_of_Unique_Edges": 22,
+            "Number_of_Vertices": 8,
+            "Width_mm": 0.75,
+            "Height_mm": 0.20311999320983887,
+            "Depth_mm": 0.20311999320983887,
+            "Bounding_Box_Center": "Vector (-0.375, 0.10155999660491943, 0.10155999660491943)",
+            "Aspect_Ratio_XY": 3.6923987055532796,
+            "Aspect_Ratio_XZ": 3.6923987055532796,
+            "Aspect_Ratio_YZ": 1.0,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.08973566415917415,
+            "Surface_Area_square_mm": 1.362163142671058,
+            "bounding_box": {
+              "min": [
+                -0.75,
+                0.0,
+                0.0
+              ],
+              "max": [
+                2.2550849322326857e-17,
+                0.20311999320983887,
+                0.20311999320983887
+              ],
+              "size": [
+                0.75,
+                0.20311999320983887,
+                0.20311999320983887
+              ],
+              "center": [
+                -0.375,
+                0.10155999660491943,
+                0.10155999660491943
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 16
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": false,
+            "Number_of_Unique_Edges": false,
+            "Number_of_Vertices": false,
+            "Width_mm": true,
+            "Height_mm": true,
+            "Depth_mm": true,
+            "Aspect_Ratio_XY": true,
+            "Aspect_Ratio_XZ": true,
+            "Aspect_Ratio_YZ": true,
+            "Volume_cubic_mm": false,
+            "Surface_Area_square_mm": false,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 16,
+              "ground_truth": 8,
+              "absolute_diff": 8,
+              "relative_error": 1.0
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 22,
+              "ground_truth": 12,
+              "absolute_diff": 10,
+              "relative_error": 0.8333333333333334
+            },
+            "Number_of_Vertices": {
+              "generated": 8,
+              "ground_truth": 6,
+              "absolute_diff": 2,
+              "relative_error": 0.3333333333333333
+            },
+            "Width_mm": {
+              "generated": 0.75,
+              "ground_truth": 0.75,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Height_mm": {
+              "generated": 0.20311999320983887,
+              "ground_truth": 0.20312,
+              "absolute_diff": 6.7901611278120555e-09,
+              "relative_error": 3.3429308427589875e-08
+            },
+            "Depth_mm": {
+              "generated": 0.20311999320983887,
+              "ground_truth": 0.22042,
+              "absolute_diff": 0.017300006790161138,
+              "relative_error": 0.07848655652917674
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 3.6923987055532796,
+              "ground_truth": 3.69231,
+              "absolute_diff": 8.870555327966656e-05,
+              "relative_error": 2.4024405664656152e-05
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 3.6923987055532796,
+              "ground_truth": 3.40265,
+              "absolute_diff": 0.2897487055532797,
+              "relative_error": 0.0851538376128252
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 1.0,
+              "ground_truth": 0.92155,
+              "absolute_diff": 0.07845000000000002,
+              "relative_error": 0.08512831642341709
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.08973566415917415,
+              "ground_truth": 0.01679,
+              "absolute_diff": 0.07294566415917415,
+              "relative_error": 4.344589884405846
+            },
+            "Surface_Area_square_mm": {
+              "generated": 1.362163142671058,
+              "ground_truth": 0.58723,
+              "absolute_diff": 0.7749331426710581,
+              "relative_error": 1.3196416100523782
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 1.0,
+            "Number_of_Unique_Edges": 0.8333333333333334,
+            "Number_of_Vertices": 0.3333333333333333,
+            "Width_mm": 0.0,
+            "Height_mm": 3.3429308427589875e-08,
+            "Depth_mm": 0.07848655652917674,
+            "Aspect_Ratio_XY": 2.4024405664656152e-05,
+            "Aspect_Ratio_XZ": 0.0851538376128252,
+            "Aspect_Ratio_YZ": 0.08512831642341709,
+            "Volume_cubic_mm": 4.344589884405846,
+            "Surface_Area_square_mm": 1.3196416100523782,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.5834261973025339,
+          "metric_scores": {
+            "Number_of_Faces": 0.0,
+            "Number_of_Unique_Edges": 0.16666666666666663,
+            "Number_of_Vertices": 0.6666666666666667,
+            "Width_mm": 1.0,
+            "Height_mm": 0.9999999665706916,
+            "Depth_mm": 0.9215134434708232,
+            "Aspect_Ratio_XY": 0.9999759755943354,
+            "Aspect_Ratio_XZ": 0.9148461623871748,
+            "Aspect_Ratio_YZ": 0.9148716835765829,
+            "Volume_cubic_mm": 0.0,
+            "Surface_Area_square_mm": 0.0,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 8,
+              "generated": 16,
+              "relative_error": 1.0,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 12,
+              "generated": 22,
+              "relative_error": 0.8333333333333334,
+              "score": 0.16666666666666663,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 6,
+              "generated": 8,
+              "relative_error": 0.3333333333333333,
+              "score": 0.6666666666666667,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 0.75,
+              "generated": 0.75,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 0.20312,
+              "generated": 0.20311999320983887,
+              "relative_error": 3.3429308427589875e-08,
+              "score": 0.9999999665706916,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 0.22042,
+              "generated": 0.20311999320983887,
+              "relative_error": 0.07848655652917674,
+              "score": 0.9215134434708232,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 3.69231,
+              "generated": 3.6923987055532796,
+              "relative_error": 2.4024405664656152e-05,
+              "score": 0.9999759755943354,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 3.40265,
+              "generated": 3.6923987055532796,
+              "relative_error": 0.0851538376128252,
+              "score": 0.9148461623871748,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 0.92155,
+              "generated": 1.0,
+              "relative_error": 0.08512831642341709,
+              "score": 0.9148716835765829,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.01679,
+              "generated": 0.08973566415917415,
+              "relative_error": 4.344589884405846,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 0.58723,
+              "generated": 1.362163142671058,
+              "relative_error": 1.3196416100523782,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.375, 0.1015625, -0.11020834743976592)",
+              "generated": "Vector (-0.375, 0.10155999660491943, 0.10155999660491943)",
+              "relative_error": 1.929789437820187,
+              "score": 0.0,
+              "match": false
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": false,
+        "timestamp": "2025-05-27T13:52:53"
+      },
+      "success": true,
+      "score": 0.5834261973025339
+    },
+    "00002221": {
+      "sample_id": "00002221",
+      "prompt": "Write Python code using CADQuery to create a 3D model consisting of two extruded rectangles, each with a length of 0.0625 units, a width of 0.75 units, and a height of 0.0034 units. These rectangles should be connected at their edges, similar to the intersection between a wall and the floor, and positioned perpendicular to each other. The connection should occur along their elongated edge, forming a right angle between the two rectangles.",
+      "generated_code": "import cadquery as cq\n\n# Dimensions for the rectangles\nlength = 0.0625\nwidth = 0.75\nheight = 0.0034\n\n# Create the first rectangle (wall-like)\nrect1 = cq.Workplane(\"XY\").rect(width, length).extrude(height)\n\n# Create the second rectangle (floor-like) and rotate it to be perpendicular to the first one\nrect2 = (\n    cq.Workplane(\"XY\")\n    .rect(width, length)\n    .extrude(height)\n    .translate((0, length / 2, 0))  # Move to the end of the first rectangle\n    .rotate((0, 0, 1), (0, 0, 0), 90)  # Rotate around Z-axis to make it perpendicular\n)\n\n# Combine both rectangles into one part\npart = rect1.union(rect2)\n\n# Export the final shape\ncq.exporters.export(part, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00002221",
+        "generated_result": {
+          "success": true,
+          "file_size": 2284,
+          "stl_info": {
+            "Number_of_Faces": 44,
+            "Number_of_Unique_Edges": 66,
+            "Number_of_Vertices": 24,
+            "Width_mm": 0.75,
+            "Height_mm": 0.75,
+            "Depth_mm": 0.0034000000450760126,
+            "Bounding_Box_Center": "Vector (0.0, 0.0, 0.0017000000225380063)",
+            "Aspect_Ratio_XY": 1.0,
+            "Aspect_Ratio_XZ": 220.5882323696359,
+            "Aspect_Ratio_YZ": 220.5882323696359,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.0015020740074115921,
+            "Surface_Area_square_mm": 0.8915839951949911,
+            "bounding_box": {
+              "min": [
+                -0.375,
+                -0.375,
+                0.0
+              ],
+              "max": [
+                0.375,
+                0.375,
+                0.0034000000450760126
+              ],
+              "size": [
+                0.75,
+                0.75,
+                0.0034000000450760126
+              ],
+              "center": [
+                0.0,
+                0.0,
+                0.0017000000225380063
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 44
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": false,
+            "Number_of_Unique_Edges": false,
+            "Number_of_Vertices": false,
+            "Width_mm": true,
+            "Height_mm": false,
+            "Depth_mm": false,
+            "Aspect_Ratio_XY": false,
+            "Aspect_Ratio_XZ": false,
+            "Aspect_Ratio_YZ": false,
+            "Volume_cubic_mm": false,
+            "Surface_Area_square_mm": false,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 44,
+              "ground_truth": 20,
+              "absolute_diff": 24,
+              "relative_error": 1.2
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 66,
+              "ground_truth": 30,
+              "absolute_diff": 36,
+              "relative_error": 1.2
+            },
+            "Number_of_Vertices": {
+              "generated": 24,
+              "ground_truth": 12,
+              "absolute_diff": 12,
+              "relative_error": 1.0
+            },
+            "Width_mm": {
+              "generated": 0.75,
+              "ground_truth": 0.75,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Height_mm": {
+              "generated": 0.75,
+              "ground_truth": 0.0625,
+              "absolute_diff": 0.6875,
+              "relative_error": 11.0
+            },
+            "Depth_mm": {
+              "generated": 0.0034000000450760126,
+              "ground_truth": 0.0625,
+              "absolute_diff": 0.05909999995492399,
+              "relative_error": 0.9455999992787838
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 1.0,
+              "ground_truth": 12.0,
+              "absolute_diff": 11.0,
+              "relative_error": 0.9166666666666666
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 220.5882323696359,
+              "ground_truth": 12.0,
+              "absolute_diff": 208.5882323696359,
+              "relative_error": 17.38235269746966
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 220.5882323696359,
+              "ground_truth": 1.0,
+              "absolute_diff": 219.5882323696359,
+              "relative_error": 219.5882323696359
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.0015020740074115921,
+              "ground_truth": 0.00035,
+              "absolute_diff": 0.001152074007411592,
+              "relative_error": 3.2916400211759775
+            },
+            "Surface_Area_square_mm": {
+              "generated": 0.8915839951949911,
+              "ground_truth": 0.18845,
+              "absolute_diff": 0.7031339951949911,
+              "relative_error": 3.7311435139028446
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 1.2,
+            "Number_of_Unique_Edges": 1.2,
+            "Number_of_Vertices": 1.0,
+            "Width_mm": 0.0,
+            "Height_mm": 11.0,
+            "Depth_mm": 0.9455999992787838,
+            "Aspect_Ratio_XY": 0.9166666666666666,
+            "Aspect_Ratio_XZ": 17.38235269746966,
+            "Aspect_Ratio_YZ": 219.5882323696359,
+            "Volume_cubic_mm": 3.2916400211759775,
+            "Surface_Area_square_mm": 3.7311435139028446,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.16444102569650382,
+          "metric_scores": {
+            "Number_of_Faces": 0.0,
+            "Number_of_Unique_Edges": 0.0,
+            "Number_of_Vertices": 0.0,
+            "Width_mm": 1.0,
+            "Height_mm": 0.0,
+            "Depth_mm": 0.0544000007212162,
+            "Aspect_Ratio_XY": 0.08333333333333337,
+            "Aspect_Ratio_XZ": 0.0,
+            "Aspect_Ratio_YZ": 0.0,
+            "Volume_cubic_mm": 0.0,
+            "Surface_Area_square_mm": 0.0,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 20,
+              "generated": 44,
+              "relative_error": 1.2,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 30,
+              "generated": 66,
+              "relative_error": 1.2,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 12,
+              "generated": 24,
+              "relative_error": 1.0,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 0.75,
+              "generated": 0.75,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 0.0625,
+              "generated": 0.75,
+              "relative_error": 11.0,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 0.0625,
+              "generated": 0.0034000000450760126,
+              "relative_error": 0.9455999992787838,
+              "score": 0.0544000007212162,
+              "match": false,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 12.0,
+              "generated": 1.0,
+              "relative_error": 0.9166666666666666,
+              "score": 0.08333333333333337,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 12.0,
+              "generated": 220.5882323696359,
+              "relative_error": 17.38235269746966,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 1.0,
+              "generated": 220.5882323696359,
+              "relative_error": 219.5882323696359,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.00035,
+              "generated": 0.0015020740074115921,
+              "relative_error": 3.2916400211759775,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 0.18845,
+              "generated": 0.8915839951949911,
+              "relative_error": 3.7311435139028446,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.375, -0.03125, -0.031249999999999976)",
+              "generated": "Vector (0.0, 0.0, 0.0017000000225380063)",
+              "relative_error": 1.000382664323463,
+              "score": 0.0,
+              "match": false
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": false,
+        "timestamp": "2025-05-27T13:52:38"
+      },
+      "success": true,
+      "score": 0.16444102569650382
+    },
+    "00002298": {
+      "sample_id": "00002298",
+      "prompt": "Write Python code using CADQuery to create a rectangular prism with dimensions of length 0.75 units, width 0.28043 units, and height 0.02045 units. Then, create a smaller rectangular cut-out within this prism with dimensions of length 0.318403 units and width 0.157741 units. Position this cut-out such that it is centered along the length of the larger rectangle and offset slightly above the midpoint of its width by 0.021963 units. Finally, rotate the entire part by -90 degrees around the x-axis and adjust its position so that it is centered and aligned properly in the 3D space.",
+      "generated_code": "import cadquery as cq\n\n# Dimensions for the main rectangular prism\nlength_main = 0.75\nwidth_main = 0.28043\nheight_main = 0.02045\n\n# Dimensions for the cut-out rectangle\nlength_cutout = 0.318403\nwidth_cutout = 0.157741\noffset_y = 0.021963\n\n# Create the main rectangular prism\nmain_part = cq.Workplane(\"XY\").box(length_main, width_main, height_main)\n\n# Create the cut-out rectangle\ncutout = cq.Workplane(\"XY\").rect(length_cutout, width_cutout).extrude(height_main)\n\n# Center the cut-out along the length of the main part and offset it along the width\ncutout_positioned = cutout.translate((0, width_main / 2 - width_cutout / 2 + offset_y, 0))\n\n# Cut the main part with the cut-out\npart_with_cutout = main_part.cut(cutout_positioned)\n\n# Rotate the part by -90 degrees around the x-axis\nrotated_part = part_with_cutout.rotate((0, 0, 0), (1, 0, 0), -90)\n\n# Export the final part\ncq.exporters.export(rotated_part, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00002298",
+        "generated_result": {
+          "success": true,
+          "file_size": 1484,
+          "stl_info": {
+            "Number_of_Faces": 28,
+            "Number_of_Unique_Edges": 42,
+            "Number_of_Vertices": 16,
+            "Width_mm": 0.75,
+            "Height_mm": 0.02044999971985817,
+            "Depth_mm": 0.28042998909950256,
+            "Bounding_Box_Center": "Vector (0.0, 0.0, 0.0)",
+            "Aspect_Ratio_XY": 36.67481712832031,
+            "Aspect_Ratio_XZ": 2.674464319626971,
+            "Aspect_Ratio_YZ": 0.07292372611618964,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.12389017410017761,
+            "Surface_Area_square_mm": 1.5443205290230766,
+            "bounding_box": {
+              "min": [
+                -0.375,
+                -0.010224999859929085,
+                -0.14021499454975128
+              ],
+              "max": [
+                0.375,
+                0.010224999859929085,
+                0.14021499454975128
+              ],
+              "size": [
+                0.75,
+                0.02044999971985817,
+                0.28042998909950256
+              ],
+              "center": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 28
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": true,
+            "Number_of_Unique_Edges": true,
+            "Number_of_Vertices": true,
+            "Width_mm": true,
+            "Height_mm": true,
+            "Depth_mm": true,
+            "Aspect_Ratio_XY": true,
+            "Aspect_Ratio_XZ": true,
+            "Aspect_Ratio_YZ": true,
+            "Volume_cubic_mm": false,
+            "Surface_Area_square_mm": false,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 28,
+              "ground_truth": 32,
+              "absolute_diff": 4,
+              "relative_error": 0.125
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 42,
+              "ground_truth": 48,
+              "absolute_diff": 6,
+              "relative_error": 0.125
+            },
+            "Number_of_Vertices": {
+              "generated": 16,
+              "ground_truth": 16,
+              "absolute_diff": 0,
+              "relative_error": 0.0
+            },
+            "Width_mm": {
+              "generated": 0.75,
+              "ground_truth": 0.75,
+              "absolute_diff": 0.0,
+              "relative_error": 0.0
+            },
+            "Height_mm": {
+              "generated": 0.02044999971985817,
+              "ground_truth": 0.02045,
+              "absolute_diff": 2.801418298725711e-10,
+              "relative_error": 1.3698866986433794e-08
+            },
+            "Depth_mm": {
+              "generated": 0.28042998909950256,
+              "ground_truth": 0.28043,
+              "absolute_diff": 1.0900497449117807e-08,
+              "relative_error": 3.887065381420606e-08
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 36.67481712832031,
+              "ground_truth": 36.67857,
+              "absolute_diff": 0.0037528716796870754,
+              "relative_error": 0.00010231782972147156
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 2.674464319626971,
+              "ground_truth": 2.67448,
+              "absolute_diff": 1.568037302890346e-05,
+              "relative_error": 5.862961408910689e-06
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 0.07292372611618964,
+              "ground_truth": 0.07292,
+              "absolute_diff": 3.726116189636808e-06,
+              "relative_error": 5.109868608936928e-05
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.12389017410017761,
+              "ground_truth": 0.00327,
+              "absolute_diff": 0.12062017410017761,
+              "relative_error": 36.886903394549726
+            },
+            "Surface_Area_square_mm": {
+              "generated": 1.5443205290230766,
+              "ground_truth": 0.3818,
+              "absolute_diff": 1.1625205290230767,
+              "relative_error": 3.044841616089777
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 0.125,
+            "Number_of_Unique_Edges": 0.125,
+            "Number_of_Vertices": 0.0,
+            "Width_mm": 0.0,
+            "Height_mm": 1.3698866986433794e-08,
+            "Depth_mm": 3.887065381420606e-08,
+            "Aspect_Ratio_XY": 0.00010231782972147156,
+            "Aspect_Ratio_XZ": 5.862961408910689e-06,
+            "Aspect_Ratio_YZ": 5.109868608936928e-05,
+            "Volume_cubic_mm": 36.886903394549726,
+            "Surface_Area_square_mm": 3.044841616089777,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.7499877436887122,
+          "metric_scores": {
+            "Number_of_Faces": 0.875,
+            "Number_of_Unique_Edges": 0.875,
+            "Number_of_Vertices": 1.0,
+            "Width_mm": 1.0,
+            "Height_mm": 0.999999986301133,
+            "Depth_mm": 0.9999999611293462,
+            "Aspect_Ratio_XY": 0.9998976821702785,
+            "Aspect_Ratio_XZ": 0.9999941370385911,
+            "Aspect_Ratio_YZ": 0.9999489013139107,
+            "Volume_cubic_mm": 0.0,
+            "Surface_Area_square_mm": 0.0,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 32,
+              "generated": 28,
+              "relative_error": 0.125,
+              "score": 0.875,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 48,
+              "generated": 42,
+              "relative_error": 0.125,
+              "score": 0.875,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 16,
+              "generated": 16,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 0.75,
+              "generated": 0.75,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 0.02045,
+              "generated": 0.02044999971985817,
+              "relative_error": 1.3698866986433794e-08,
+              "score": 0.999999986301133,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 0.28043,
+              "generated": 0.28042998909950256,
+              "relative_error": 3.887065381420606e-08,
+              "score": 0.9999999611293462,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 36.67857,
+              "generated": 36.67481712832031,
+              "relative_error": 0.00010231782972147156,
+              "score": 0.9998976821702785,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 2.67448,
+              "generated": 2.674464319626971,
+              "relative_error": 5.862961408910689e-06,
+              "score": 0.9999941370385911,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 0.07292,
+              "generated": 0.07292372611618964,
+              "relative_error": 5.109868608936928e-05,
+              "score": 0.9999489013139107,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.00327,
+              "generated": 0.12389017410017761,
+              "relative_error": 36.886903394549726,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 0.3818,
+              "generated": 1.5443205290230766,
+              "relative_error": 3.044841616089777,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.375, -0.01022395491600001, 0.14021420478820798)",
+              "generated": "Vector (0.0, 0.0, 0.0)",
+              "relative_error": 1.0,
+              "score": 0.0,
+              "match": false
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": true,
+        "timestamp": "2025-05-27T13:53:05"
+      },
+      "success": true,
+      "score": 0.7499877436887122
+    },
+    "00003219": {
+      "sample_id": "00003219",
+      "prompt": "Write Python code using CADQuery to create a long cylinder with a height of 1.23718 units and a radius of 0.27226 units.",
+      "generated_code": "import cadquery as cq\n\n# Define dimensions\nradius = 0.27226\nheight = 1.23718\n\n# Create a cylinder by extruding a circular sketch\npart = (\n    cq.Workplane()\n    .circle(radius)\n    .extrude(height)\n)\n\n# Export the part to an STL file\ncq.exporters.export(part, 'Ground_Truth.stl')",
+      "validation_result": {
+        "sample_dir": "/gpfs/users/linjiahang/nlp_project/cad_pj/final_pj/CAD_Code_Generation/CADPrompt/00003219",
+        "generated_result": {
+          "success": true,
+          "file_size": 25084,
+          "stl_info": {
+            "Number_of_Faces": 500,
+            "Number_of_Unique_Edges": 750,
+            "Number_of_Vertices": 252,
+            "Width_mm": 0.5445200204849243,
+            "Height_mm": 0.5443507432937622,
+            "Depth_mm": 1.2371799945831299,
+            "Bounding_Box_Center": "Vector (0.0, 0.0, 0.6185899972915649)",
+            "Aspect_Ratio_XY": 1.0003109708092577,
+            "Aspect_Ratio_XZ": 0.44012999148794135,
+            "Aspect_Ratio_YZ": 0.4399931664569004,
+            "Is_Solid": true,
+            "Volume_cubic_mm": 0.2881047871008339,
+            "Surface_Area_square_mm": 2.5821387836940213,
+            "bounding_box": {
+              "min": [
+                -0.27226001024246216,
+                -0.2721753716468811,
+                0.0
+              ],
+              "max": [
+                0.27226001024246216,
+                0.2721753716468811,
+                1.2371799945831299
+              ],
+              "size": [
+                0.5445200204849243,
+                0.5443507432937622,
+                1.2371799945831299
+              ],
+              "center": [
+                0.0,
+                0.0,
+                0.6185899972915649
+              ]
+            },
+            "format": "Binary",
+            "triangle_count_from_header": 500
+          }
+        },
+        "ground_truth_available": true,
+        "comparison": {
+          "matches": {
+            "Number_of_Faces": false,
+            "Number_of_Unique_Edges": false,
+            "Number_of_Vertices": false,
+            "Width_mm": true,
+            "Height_mm": true,
+            "Depth_mm": true,
+            "Aspect_Ratio_XY": true,
+            "Aspect_Ratio_XZ": true,
+            "Aspect_Ratio_YZ": true,
+            "Volume_cubic_mm": true,
+            "Surface_Area_square_mm": true,
+            "Is_Solid": true
+          },
+          "differences": {
+            "Number_of_Faces": {
+              "generated": 500,
+              "ground_truth": 140,
+              "absolute_diff": 360,
+              "relative_error": 2.5714285714285716
+            },
+            "Number_of_Unique_Edges": {
+              "generated": 750,
+              "ground_truth": 210,
+              "absolute_diff": 540,
+              "relative_error": 2.5714285714285716
+            },
+            "Number_of_Vertices": {
+              "generated": 252,
+              "ground_truth": 72,
+              "absolute_diff": 180,
+              "relative_error": 2.5
+            },
+            "Width_mm": {
+              "generated": 0.5445200204849243,
+              "ground_truth": 0.54452,
+              "absolute_diff": 2.0484924312391684e-08,
+              "relative_error": 3.76201504304556e-08
+            },
+            "Height_mm": {
+              "generated": 0.5443507432937622,
+              "ground_truth": 0.54452,
+              "absolute_diff": 0.00016925670623779698,
+              "relative_error": 0.0003108365280206365
+            },
+            "Depth_mm": {
+              "generated": 1.2371799945831299,
+              "ground_truth": 1.23718,
+              "absolute_diff": 5.416870063612578e-09,
+              "relative_error": 4.378400930836724e-09
+            },
+            "Aspect_Ratio_XY": {
+              "generated": 1.0003109708092577,
+              "ground_truth": 1.0,
+              "absolute_diff": 0.0003109708092576824,
+              "relative_error": 0.0003109708092576824
+            },
+            "Aspect_Ratio_XZ": {
+              "generated": 0.44012999148794135,
+              "ground_truth": 0.44013,
+              "absolute_diff": 8.512058669030154e-09,
+              "relative_error": 1.9339873830527692e-08
+            },
+            "Aspect_Ratio_YZ": {
+              "generated": 0.4399931664569004,
+              "ground_truth": 0.44013,
+              "absolute_diff": 0.0001368335430996237,
+              "relative_error": 0.00031089347033745417
+            },
+            "Volume_cubic_mm": {
+              "generated": 0.2881047871008339,
+              "ground_truth": 0.28665,
+              "absolute_diff": 0.0014547871008339097,
+              "relative_error": 0.005075133789757229
+            },
+            "Surface_Area_square_mm": {
+              "generated": 2.5821387836940213,
+              "ground_truth": 2.57712,
+              "absolute_diff": 0.0050187836940214225,
+              "relative_error": 0.0019474388829474076
+            },
+            "Is_Solid": {
+              "generated": true,
+              "ground_truth": true,
+              "match": true
+            }
+          },
+          "relative_errors": {
+            "Number_of_Faces": 2.5714285714285716,
+            "Number_of_Unique_Edges": 2.5714285714285716,
+            "Number_of_Vertices": 2.5,
+            "Width_mm": 3.76201504304556e-08,
+            "Height_mm": 0.0003108365280206365,
+            "Depth_mm": 4.378400930836724e-09,
+            "Aspect_Ratio_XY": 0.0003109708092576824,
+            "Aspect_Ratio_XZ": 1.9339873830527692e-08,
+            "Aspect_Ratio_YZ": 0.00031089347033745417,
+            "Volume_cubic_mm": 0.005075133789757229,
+            "Surface_Area_square_mm": 0.0019474388829474076,
+            "Is_Solid": 0.0
+          },
+          "overall_score": 0.7686185683922842,
+          "metric_scores": {
+            "Number_of_Faces": 0.0,
+            "Number_of_Unique_Edges": 0.0,
+            "Number_of_Vertices": 0.0,
+            "Width_mm": 0.9999999623798496,
+            "Height_mm": 0.9996891634719793,
+            "Depth_mm": 0.999999995621599,
+            "Aspect_Ratio_XY": 0.9996890291907423,
+            "Aspect_Ratio_XZ": 0.9999999806601262,
+            "Aspect_Ratio_YZ": 0.9996891065296626,
+            "Volume_cubic_mm": 0.9949248662102428,
+            "Surface_Area_square_mm": 0.9980525611170525,
+            "Is_Solid": 1.0
+          },
+          "detailed_comparison": {
+            "Number_of_Faces": {
+              "ground_truth": 140,
+              "generated": 500,
+              "relative_error": 2.5714285714285716,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Unique_Edges": {
+              "ground_truth": 210,
+              "generated": 750,
+              "relative_error": 2.5714285714285716,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Number_of_Vertices": {
+              "ground_truth": 72,
+              "generated": 252,
+              "relative_error": 2.5,
+              "score": 0.0,
+              "match": false,
+              "tolerance": 0.3,
+              "type": "integer"
+            },
+            "Width_mm": {
+              "ground_truth": 0.54452,
+              "generated": 0.5445200204849243,
+              "relative_error": 3.76201504304556e-08,
+              "score": 0.9999999623798496,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Height_mm": {
+              "ground_truth": 0.54452,
+              "generated": 0.5443507432937622,
+              "relative_error": 0.0003108365280206365,
+              "score": 0.9996891634719793,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Depth_mm": {
+              "ground_truth": 1.23718,
+              "generated": 1.2371799945831299,
+              "relative_error": 4.378400930836724e-09,
+              "score": 0.999999995621599,
+              "match": true,
+              "tolerance": 0.1,
+              "type": "float"
+            },
+            "Aspect_Ratio_XY": {
+              "ground_truth": 1.0,
+              "generated": 1.0003109708092577,
+              "relative_error": 0.0003109708092576824,
+              "score": 0.9996890291907423,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Aspect_Ratio_XZ": {
+              "ground_truth": 0.44013,
+              "generated": 0.44012999148794135,
+              "relative_error": 1.9339873830527692e-08,
+              "score": 0.9999999806601262,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Aspect_Ratio_YZ": {
+              "ground_truth": 0.44013,
+              "generated": 0.4399931664569004,
+              "relative_error": 0.00031089347033745417,
+              "score": 0.9996891065296626,
+              "match": true,
+              "tolerance": 0.3,
+              "type": "float"
+            },
+            "Volume_cubic_mm": {
+              "ground_truth": 0.28665,
+              "generated": 0.2881047871008339,
+              "relative_error": 0.005075133789757229,
+              "score": 0.9949248662102428,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Surface_Area_square_mm": {
+              "ground_truth": 2.57712,
+              "generated": 2.5821387836940213,
+              "relative_error": 0.0019474388829474076,
+              "score": 0.9980525611170525,
+              "match": true,
+              "tolerance": 0.2,
+              "type": "float"
+            },
+            "Is_Solid": {
+              "ground_truth": true,
+              "generated": true,
+              "relative_error": 0.0,
+              "score": 1.0,
+              "match": true,
+              "tolerance": 0.0,
+              "type": "boolean"
+            },
+            "Bounding_Box_Center": {
+              "ground_truth": "Vector (0.0, 0.0, 0.6185920238494873)",
+              "generated": "Vector (0.0, 0.0, 0.6185899972915649)",
+              "relative_error": 3.276081559784827e-06,
+              "score": 0.9999967239184402,
+              "match": true
+            }
+          },
+          "metrics_compared": 13,
+          "metrics_available": 12,
+          "execution_success": true
+        },
+        "validation_passed": true,
+        "timestamp": "2025-05-27T13:52:36"
+      },
+      "success": true,
+      "score": 0.7686185683922842
+    }
+  }
+}
